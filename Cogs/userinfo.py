@@ -1,3 +1,4 @@
+from re import A
 import time
 
 import discord
@@ -28,6 +29,7 @@ class userinfoCog(commands.Cog, name="userinfo command"):
 		embed.add_field(name="User Top Role", value=user.top_role)
 		embed.add_field(name="User Bot", value=user.bot)
 		embed.add_field(name="User Avatar URL", value=user.avatar_url)
+		await ctx.send(embed=embed)
 
 def setup(bot:commands.Bot):
 	bot.add_cog(userinfoCog(bot))
