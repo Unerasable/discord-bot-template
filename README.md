@@ -6,7 +6,6 @@ Download/clone the repository, open `configuration.json` and put your discord to
 ## Total Commands
 `HELP`
 `INVITE`
-`ONCOMMANDERROR`
 `SAY`
 `SERVERICON`
 `SERVERINFO`

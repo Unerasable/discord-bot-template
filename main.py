@@ -31,10 +31,11 @@ if __name__ == '__main__':
 				contents=log.read()
 				if filenameSyn not in contents:
 					if filenameSyn == "ONCOMMANDERROR":
-						print("[WARNING] The cog 'OnCommandError' is not recommended to be used in production. It is only for debugging purposes.")
-					log.write(f"`{filenameSyn}`\n")
-					log.close()
-					print(f"[INFO] Added {filenameSyn} to the README.md file.")
+						pass
+					else:
+						log.write(f"`{filenameSyn}`\n")
+						log.close()
+						print(f"[INFO] Added {filenameSyn} to the README.md file.")
 				else:
 					print(f"[INFO] {filenameSyn} is already in the README.md file.")
 		else:
