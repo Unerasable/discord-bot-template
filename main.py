@@ -26,6 +26,21 @@ if __name__ == '__main__':
 	for filename in os.listdir("Cogs"):
 		if filename.endswith(".py"):
 			bot.load_extension(f"Cogs.{filename[:-3]}")
+			with open("README.md", "r+") as log:
+				filenameSyn = filename[:-3].upper().replace(".py", "")
+				contents=log.read()
+				if filenameSyn not in contents:
+					if filenameSyn == "ONCOMMANDERROR":
+						print("[WARNING] The cog 'OnCommandError' is not recommended to be used in production. It is only for debugging purposes.")
+					log.write(f"`{filenameSyn}`\n")
+					log.close()
+					print(f"[INFO] Added {filenameSyn} to the README.md file.")
+				else:
+					print(f"[INFO] {filenameSyn} is already in the README.md file.")
+		else:
+			with open("log.txt", "a") as log:
+				log.write(f"{filename} is not a .py file\n")
+				log.close()
 
 @bot.event
 async def on_ready():
